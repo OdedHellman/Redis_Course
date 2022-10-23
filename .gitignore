@@ -153,3 +153,4 @@ cython_debug/
 redis_101.py
 .DS_Store
 Examples/
+.vscode/
