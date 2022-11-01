@@ -21,13 +21,13 @@ while True:
 			print(orderDict)
 
 			try:
-				item = Product(
+				item = Product (
 					StockCode=orderDict['StockCode'],
 					Description=orderDict['Description'],
 					UnitPrice=orderDict['UnitPrice']
 				)
 
-				order = Order(
+				order = Order (
 					InvoiceNo=orderDict['InvoiceNo'],
 					Item = item,
 					Quantity=orderDict['Quantity'],
