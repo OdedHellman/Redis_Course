@@ -12,7 +12,7 @@ port = getenv('REDIS_PORT')
 r = Redis(password=password, host=host, port=port, decode_responses=True)
 
 while True:
-	received = r.xread(streams={"Orders": '$'}, count=100, block=0)
+	received = r.xread(streams={"Orders": '$'}, count=None, block=0)
 
 	for result in received:
 		data = result[1]
@@ -29,7 +29,7 @@ while True:
 
 				order = Order (
 					InvoiceNo=orderDict['InvoiceNo'],
-					Item = item,
+					Item=item,
 					Quantity=orderDict['Quantity'],
 					InvoiceDate=datetime.datetime.strptime(orderDict['InvoiceDate'], '%m/%d/%Y %H:%M'),
 					CustomerID=orderDict['CustomerID'],

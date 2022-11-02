@@ -3,7 +3,7 @@ import csv
 from redis.client import Redis
 from schema.retail_schema import *
 
-MAX_ROWS_TO_STREAM = 1000
+MAX_ROWS_TO_STREAM = 2000
 
 password = getenv('REDIS_PASSWORD')
 host = getenv('REDIS_HOST')
